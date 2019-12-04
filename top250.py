@@ -18,16 +18,10 @@ def get_top250():
             	result.append(_id)
    	return result
 	
-top250 = get_top250()
-count = 0
-
-for movie_id in top250:
+for movie_id in get_top250():
 	the_matrix = ia.get_movie(movie_id)
 	print(the_matrix['title'])
 	print(the_matrix['year'])
 	print(the_matrix.summary())
 	webbrowser.open(the_matrix['cover url'])
 	print('\n')
-	count = count + 1
-	if count == 2:
-		break
